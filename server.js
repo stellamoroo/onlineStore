@@ -11,7 +11,7 @@ require('dotenv').config();
 //   mipaqueteApiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI0OWI2ZmMxN2NlMDM0Y2ZmZGM3YzEiLCJuYW1lIjoicHJ1ZWJhcyIsInN1cm5hbWUiOiIuIiwiZW1haWwiOiJwcnVlYmFzbWlwYXF1ZXRlb2ZpY2lhbEBnbWFpbC5jb20iLCJjZWxsUGhvbmUiOiIzMTM2MjczMjM5IiwiY3JlYXRlZEF0IjoiMjAyMS0wNS0zMVQwODoxNjo0Ny43ODhaIiwiZGF0ZSI6IjIwMjUtMDUtMTIgMTY6NTk6NDciLCJpYXQiOjE3NDcwODcxODd9.WfbQVUSDceKSrpwtWrQPDHA_9xQR6KesQZ-G4UpOMPk',
 //   mipaqueteSessionTracker: 'a0c96ea6-b22d-4fb7-a278-850678d5429c'
 // };
-const port = 3000;
+const port = process.env.port;
 
 // Construct a schema, using GraphQL schema language
 const schema = buildSchema(`
@@ -174,6 +174,7 @@ app.post('/client', (req, res) => {
 
 
 // Start the server at port
-app.listen(port);
-console.log(' Running a GraphQL API server at http://localhost:' +port + '/graphql');
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}/graphql`)
+})
  
