@@ -63,7 +63,8 @@ const root = {
   },
   quoteParams({origin, destiny, height, width, length,
     weight, qty, declVal, saleVal}) {
-    return new Promise((resolve) => {
+      console.log(`apiKey: ${process.env.mipaqueteApiKey}`);
+    return new Promise((resolve, reject) => {
       fetch( `${process.env.mipaqueteAPI}/quoteShipping`, {
         method: "POST",
         headers: {
@@ -137,7 +138,7 @@ const app = express();
 app.use(cors({
   origin: '*', // frontend URL * ,http://localhost:4200,  '*'
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin'],
   credentials: true // allow cookies and auth headers
 })); 
 
