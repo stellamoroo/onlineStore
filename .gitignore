@@ -2,6 +2,7 @@
 /node_modules
 /downloads
 npm-debug.log
+API_MI_PAQUETE
 
 # Local development
 *.env

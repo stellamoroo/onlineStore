@@ -106,11 +106,13 @@ const root = {
   transfe({dataCli, dataTrans}){ 
     return new Promise((resolve,reject) => {
       console.log('transfe :', dataCli, dataTrans);
-      const client = JSON.parse(dataCli);
+      resolve('Info Transacción recibida !' );
+      /*const client = JSON.parse(dataCli);
       const transaction = JSON.parse( dataTrans );
       const now = new Date();
-      // console.log('transaction: ', transaction,
-      //   ' client: ', client );
+      console.log('transaction: ', transaction,
+      ' client: ', client );
+
       const fname2 = transaction.data.x_ref_payco 
         ? transaction.data.x_ref_payco : client.name 
       // fname2 = './downloads/ref_payco' + fname2 + '_'  + now.getHours() 
@@ -127,7 +129,7 @@ const root = {
           }else{
             resolve('Info Transacción guardada !' );
           }
-      }); 
+      }); */ 
     });      
   }
 }
