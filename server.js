@@ -85,7 +85,7 @@ const root = {
         })
       }).then((response) => {
         if (!response.ok) {
-          reject(`HTTP error! Status: ${response.status}`);
+          reject(`HTTP error! Status: ${response.status} ${response.message}`);
         }
         response.text().then((rr) => {
           //console.log("RESPONSE ", response);
