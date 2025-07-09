@@ -107,6 +107,8 @@ const root = {
     return new Promise((resolve,reject) => {
       console.log('transfe :', dataCli, dataTrans);
       resolve('Info Transacción recibida !' );
+      //commented in the file creation.In render I have no access to directories
+      //only access to the logs:
       /*const client = JSON.parse(dataCli);
       const transaction = JSON.parse( dataTrans );
       const now = new Date();
